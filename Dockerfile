@@ -19,4 +19,7 @@ RUN pip3 install -U pip && pip3 install -U -r requirements.txt
 
 COPY . .
 
+# Force yt-dlp to use the cookies file
+ENV YTDL_OPTIONS='{"cookiefile": "/app/cookies.txt"}'
+
 CMD ["bash", "start"]
